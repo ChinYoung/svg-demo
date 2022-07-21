@@ -53,4 +53,6 @@
 
     <circle cx="10" cy="55" r="5" fill="black"/>
     <text x="10" y="55" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">75</text>
+  <!-- 中心小圆 -->
+  <circle cx="55" cy="55" r="1.5" fill="black"/>
   </svg>

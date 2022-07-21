@@ -6,6 +6,7 @@ const sin60 = Math.sin(Math.PI/3)
 const config = {
   // 背景大圆半径
   r: 45,
+  centerCircleR: 1.5,
   // 分数的字体大小, 同时决定背景圆大小
   pointFontSize: 5,
   // 分数
@@ -130,6 +131,8 @@ const svg = `
   <line stroke-width="0.1" x1="${fontPosition[5][0]}" y1="${fontPosition[5][1]}" x2="${centerX}" y2="${centerY}" stroke="#9c9c9c"/>
   <!-- 分数及背景小圆 -->
   ${pointText}
+  <!-- 中心小圆 -->
+  <circle cx="${config.viewPortWidth * 0.5}" cy="${config.viewPortHeight * 0.5}" r="${config.centerCircleR}" fill="black"/>
   </svg>
 `
 
