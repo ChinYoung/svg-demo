@@ -101,7 +101,7 @@ const shadowColorTransform = `
 0.2  0   0   0   0
  0  0.2  0   0   0
  0   0  0.2  0   0
- 0   0   0   1   0
+ 0   0   0   0.2   0
 `
 
 const svg = `
@@ -110,7 +110,7 @@ const svg = `
   <!-- 阴影 -->
   <defs>
     <filter id="f1" x="-200%" y="-200%" width="400%" height="400%">
-      <feOffset result="offOut" in="SourceGraphic" dx="0.5" dy="0.5" />
+      <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
       <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="${shadowColorTransform}" />
       <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
       <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
