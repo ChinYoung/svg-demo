@@ -92,14 +92,30 @@ const pointText = config.points
   .map((point, index) => {
     const centerPoint = textCorMap[index]
     return `
-    <circle cx="${centerPoint[0]}" cy="${centerPoint[1]}" r="${config.pointFontSize}" fill="black"/>
+    <circle cx="${centerPoint[0]}" cy="${centerPoint[1]}" r="${config.pointFontSize}" fill="black" filter="url(#f1)"/>
     <text x="${centerPoint[0]}" y="${centerPoint[1]}" font-size="${config.pointFontSize}" dominant-baseline="central" text-anchor="middle" fill="white">${point}</text>`
   })
   .join('\n')
 
+const shadowColorTransform = `
+0.2  0   0   0   0
+ 0  0.2  0   0   0
+ 0   0  0.2  0   0
+ 0   0   0   1   0
+`
+
 const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 ${config.viewPortWidth} ${config.viewPortHeight}">
   <rect width="100%" height="100%" fill="rgba(255,255,255,0.5)" stroke="black"/>
+  <!-- 阴影 -->
+  <defs>
+    <filter id="f1" x="-200%" y="-200%" width="400%" height="400%">
+      <feOffset result="offOut" in="SourceGraphic" dx="0.5" dy="0.5" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="${shadowColorTransform}" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
   <!-- 渐变 -->
   <radialGradient id="exampleGradient">
     <stop offset="0" stop-color="${config.gradientStart}"/>
@@ -140,3 +156,4 @@ console.log(svg)
 const fs = require('fs')
 const path = require('path')
 fs.writeFile(path.join(__dirname, 'd.svg'), svg, err => err && console.log(err))
+

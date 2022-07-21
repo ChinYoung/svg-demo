@@ -1,6 +1,20 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 110 110">
   <rect width="100%" height="100%" fill="rgba(255,255,255,0.5)" stroke="black"/>
+  <!-- 阴影 -->
+  <defs>
+    <filter id="f1" x="-200%" y="-200%" width="400%" height="400%">
+      <feOffset result="offOut" in="SourceGraphic" dx="0.5" dy="0.5" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="
+0.2  0   0   0   0
+ 0  0.2  0   0   0
+ 0   0  0.2  0   0
+ 0   0   0   1   0
+" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
   <!-- 渐变 -->
   <radialGradient id="exampleGradient">
     <stop offset="0" stop-color="white"/>
@@ -36,22 +50,22 @@
   <line stroke-width="0.1" x1="10" y1="55" x2="55" y2="55" stroke="#9c9c9c"/>
   <!-- 分数及背景小圆 -->
   
-    <circle cx="32.5" cy="16.03" r="5" fill="black"/>
+    <circle cx="32.5" cy="16.03" r="5" fill="black" filter="url(#f1)"/>
     <text x="32.5" y="16.03" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">95</text>
 
-    <circle cx="77.5" cy="16.03" r="5" fill="black"/>
+    <circle cx="77.5" cy="16.03" r="5" fill="black" filter="url(#f1)"/>
     <text x="77.5" y="16.03" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">65</text>
 
-    <circle cx="100" cy="55" r="5" fill="black"/>
+    <circle cx="100" cy="55" r="5" fill="black" filter="url(#f1)"/>
     <text x="100" y="55" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">45</text>
 
-    <circle cx="77.5" cy="93.97" r="5" fill="black"/>
+    <circle cx="77.5" cy="93.97" r="5" fill="black" filter="url(#f1)"/>
     <text x="77.5" y="93.97" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">95</text>
 
-    <circle cx="32.5" cy="93.97" r="5" fill="black"/>
+    <circle cx="32.5" cy="93.97" r="5" fill="black" filter="url(#f1)"/>
     <text x="32.5" y="93.97" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">45</text>
 
-    <circle cx="10" cy="55" r="5" fill="black"/>
+    <circle cx="10" cy="55" r="5" fill="black" filter="url(#f1)"/>
     <text x="10" y="55" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">75</text>
   <!-- 中心小圆 -->
   <circle cx="55" cy="55" r="1.5" fill="black"/>
