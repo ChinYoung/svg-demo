@@ -7,60 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  <div style="width: 500px; height:500px;">
-    <!-- <img src="./d.svg" alt="" srcset=""> -->
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100">
-  <rect width="100%" height="100%" fill="rgba(255,255,255,0.5)"/>
-  <!-- 渐变 -->
-  <radialGradient id="exampleGradient">
-    <stop offset="0" stop-color="white"/>
-    <stop offset="95%" stop-color="#ccc"/>
-  </radialGradient>
-  <!-- 背景大圆 -->
-  <circle cx="50%" cy="50%" r="45%" fill="white" stroke-width="0.1" stroke="#ccc"/>
-  <!-- 固定连接小圆的线 -->
-  <line stroke-width="0.1" x1="27.5" y1="11" x2="72.5" y2="11" stroke="#505050"/>
-  <line stroke-width="0.1" x1="72.5" y1="11" x2="95" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="95" y1="50" x2="72.5" y2="89" stroke="#505050"/>
-  <line stroke-width="0.1" x1="72.5" y1="89" x2="27.5" y2="89" stroke="#505050"/>
-  <line stroke-width="0.1" x1="27.5" y1="89" x2="5" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="5" y1="50" x2="27.5" y2="11" stroke="#505050"/>
-  <!-- 蛛网线 -->
-    <!-- 第一点 x: 0.5 - (point/100) * r * cos(pi/3) * ratio, y: 0.5 - (point/100) * r * sin(pi/3) * ratio -->
-    <!-- 第二点 x: 0.5 + (point/100) * r * cos(pi/3) * ratio, y: 0.5 - (point/100) * r * sin(pi/3) * ratio -->
-    <!-- 第三点 x: 0.5 + (point/100) * r * ratio, y: 0.5 -->
-    <!-- 第四点 x: 0.5 + (point/100) * r * cos(pi/3) * ratio, y: 0.5 + (point/100) * r * sin(pi/3) * ratio -->
-    <!-- 第五点 x: 0.5 - (point/100) * r * cos(pi/3) * ratio, y: 0.5 + (point/100) * r * sin(pi/3) * ratio -->
-    <!-- 第六点 x: 0.5 - (point/100) * r * ratio, y: 0.5 -->
-
-  <polygon points="32.58,19.82 63.86,25.99 81.68,50.00 65.84,77.44 38.12,70.58 18.32,50.00" fill="url(#exampleGradient)" stroke="black" stroke-width="0.1"/>
-  <polygon points="34.16,22.56 62.60,28.18 78.80,50.00 64.40,74.94 39.20,68.71 21.20,50.00" fill="rgba(0,0,0,0)" stroke="black" stroke-width="0.1"/>
-  <polygon points="37.13,27.71 60.24,32.27 73.40,50.00 61.70,70.26 41.23,65.20 26.60,50.00" fill="rgba(0,0,0,0)" stroke="black" stroke-width="0.1"/>
-  <polygon points="42.08,36.28 56.30,39.09 64.40,50.00 57.20,62.47 44.60,59.35 35.60,50.00" fill="rgba(0,0,0,0)" stroke="black" stroke-width="0.1"/>
-
-  <!-- 固定放射线 -->
-  <line stroke-width="0.1" x1="27.5" y1="11" x2="50" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="72.5" y1="11" x2="50" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="95" y1="50" x2="50" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="72.5" y1="89" x2="50" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="27.5" y1="89" x2="50" y2="50" stroke="#505050"/>
-  <line stroke-width="0.1" x1="5" y1="50" x2="50" y2="50" stroke="#505050"/>
-
-  <!-- 分数及背景小圆 -->
-  <circle cx="27.5" cy="11.03" r="5" fill="#505050"/>
-  <text x="27.5" y="11.03" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">88</text>
-  <circle cx="72.5" cy="11.03" r="5" fill="#505050"/>
-  <text x="72.5" y="11.03" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">70</text>
-  <circle cx="95" cy="50" r="5" fill="#505050"/>
-  <text x="95" y="50" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">80</text>
-  <circle cx="72.5" cy="88.97" r="5" fill="#505050"/>
-  <text x="72.5" y="88.97" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">80</text>
-  <circle cx="27.5" cy="88.97" r="5" fill="#505050"/>
-  <text x="27.5" y="88.97" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">60</text>
-  <circle cx="5" cy="50" r="5" fill="#505050"/>
-  <text x="5" y="50" font-size="5" dominant-baseline="central" text-anchor="middle" fill="white">80</text>
-
-</svg>
+  <div style="display: flex;justify-content: center;align-items: center;width: 100vw;height: 100vh;">
+    <div style="width: 800px; height:800px;">
+      <img src="./d.svg" alt="" srcset="">
+    </div>
   </div>
 </body>
 </html>
